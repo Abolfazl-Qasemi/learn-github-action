@@ -1,4 +1,4 @@
-from mian import say_hello 
+from main import say_hello 
 
 def test():
-    assert say_hello() != "Hello from python!"
+    assert say_hello() == "Hello from python!"
