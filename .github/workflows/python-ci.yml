@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     defaults:
-      run:
+      run:           # this is a name for a section not running syntax
         working-directory: .
 
     steps:
