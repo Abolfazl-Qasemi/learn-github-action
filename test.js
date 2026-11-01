@@ -1,4 +1,4 @@
-const add = require('./calculator');
+const add = require('./index');
 
 const result = add(2, 3);
 const expected = 5;
