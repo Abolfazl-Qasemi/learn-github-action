@@ -17,14 +17,14 @@ jobs:
 
       
       - name: Run tests
-        run: node test.js
+        run: node js/test.js
   
   test-python:
     runs-on: ubuntu-latest
 
-    #defaults:
-      #run:           # this is a name for a section not running syntax
-        #working-directory: .
+    defaults:
+      run:           # this is a name for a section not running syntax
+        working-directory: python/
 
     steps:
       - name: Checkout code
