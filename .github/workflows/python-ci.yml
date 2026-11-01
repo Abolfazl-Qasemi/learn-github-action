@@ -1,24 +1,14 @@
-name: Python CI
-
-on: [push]
-
 jobs:
   test:
     runs-on: ubuntu-latest
 
     defaults:
       run:
-        working-directory: ./learn-github-action
+        working-directory: .
 
     steps:
-      - name: Checkout code
-        run: git clone https://github.com/Abolfazl-Qasemi/learn-github-action.git
+      - uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y python3 python3-pip
-          pip install pytest
+      - run: pip install pytest
 
-      - name: Run tests
-        run: pytest test.py
+      - run: pytest test.py
