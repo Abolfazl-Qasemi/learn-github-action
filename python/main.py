@@ -1,6 +1,8 @@
-def say_hello():
-    return "Hello from python!"
+"""Tests for the main module."""
 
-if __name__ == "__main__" :
-    print(say_hello())
+from main import say_hello
 
+
+def test_say_hello():
+    """Verify that say_hello returns the expected greeting."""
+    assert say_hello() == "Hello from python!"
