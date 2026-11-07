@@ -19,7 +19,7 @@ on: [push]
         uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-          cache: 'pip' 
+          cache: 'pip'  
           cache-dependency-path: python/requirements.txt #need to set path 
       
       - name: Install dependencies
