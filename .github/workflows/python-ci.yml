@@ -30,3 +30,38 @@ jobs:
 
       - name: Run Litn
         run: pylint *.py
+
+
+ build-python:
+  needs: [test-python]
+   strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: 'pip'  
+          cache-dependency-path: python/requirements.txt  
+      
+      - name: Install dependencies
+        run: pip install pyinstaller
+
+      - name: build
+	run: pyinstaller --onefile python/main.py
+
+      -	name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: executable-${{ matrix.os }}
+          path: dist/
+
+ 
+
+
