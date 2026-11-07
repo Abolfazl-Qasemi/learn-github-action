@@ -33,9 +33,9 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v7
         with:
-          python-version: '3.12.16'
+          python-version: '3.12'
           cache: 'pip' 
-          cache-dependency-path: python/requirements.txt 
+          cache-dependency-path: python/requirements.txt #need to set path 
       
       - name: Install dependencies
         run: pip install -r requirements.txt
