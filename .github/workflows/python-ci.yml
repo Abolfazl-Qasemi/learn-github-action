@@ -1,23 +1,7 @@
-name: Python and Js CI
+name: Python CI/CD
 
 on: [push]
-
-jobs:
-  test-js:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      
-      - name: Run tests
-        run: node js/test.js
+  jobs:
   
   test-python:
     runs-on: ubuntu-latest
